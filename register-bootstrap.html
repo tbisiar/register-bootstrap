@@ -222,17 +222,33 @@
                 
             </div>
 
-            <div class="row uoa-form__elt uoa-form__date" data-pattern-error-msg="This date is invalid" data-max-error-msg="This date can't be in the future">
+<div class="input-group date">
+    <input type="text" class="form-control" value="12-02-2012">
+    <div class="input-group-addon">
+        <span class="glyphicon glyphicon-th"></span>
+    </div>
+</div>
+
+            <div class="row uoa-form__elt uoa-form__text" data-pattern-error-msg="This date is invalid" data-max-error-msg="This date can't be in the future">
                 <label for="dateOfBirth" class="col-md-3 uoa-form__label">Date of birth</label>
                 <div class="col-xs-11 col-md-6">
                     <div class="dob-container">
                         <!-- <svg class="icon-calendar" focusable="true" aria-hidden="false">
                             <use xlink:href="register/images/sprite.svg#icn-calendar"></use>
                         </svg> -->
-                        <input id="dateOfBirth" type="date" aria-required="false" min="1900-01-01" max="today"
+                        <!-- <input id="dateOfBirth" type="date" aria-required="false" min="1900-01-01" max="today"
                                aria-describedby="date-error" data-value=""
-                               data-verified="" />
-                       <input id="bootstrapDateOfBirth" />
+                               data-verified="" /> -->
+
+						<div class="input-group date">
+	                       <input id="bootstrapDateOfBirth" type="tel" class="form-control" aria-required="false" min="1900-01-01" max="today"
+	                               aria-describedby="date-error" data-value=""
+	                               data-verified="">
+							<div class="input-group-addon">
+							    <span class="glyphicon glyphicon-th"></span>
+							</div>
+						</div>
+
                     </div>
                     <div class="uoa-form__elt-error" id="date-error"></div>
                     

@@ -225,10 +225,19 @@ function startTimeoutTimer() {
 
 
 $(document).ready(function() {
-    $('#bootstrapDateOfBirth').datepicker({
+    $.fn.datepicker.defaults.format = "dd/MM/yyyy";
+    $.fn.datepicker.defaults.autoClose = true;
+    var bootstrapDateOfBirth = $('#bootstrapDateOfBirth').datepicker({
         startView: "years",
-        autoClose: true
+        maxView: "decades"
     });
+
+    // Trying to get autoclose working.. :(
+    bootstrapDateOfBirth.on('changeDate', function(ev) {
+         $('.datepicker').hide();
+    });
+
+    // $.fn.datepicker.defaults.autoclose = true;
     
     $('input[type=radio][name=hasPreferredName]').change(function() {
         if (this.value === "true") {

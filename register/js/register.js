@@ -225,8 +225,9 @@ function startTimeoutTimer() {
 
 
 $(document).ready(function() {
-    $.fn.datepicker.defaults.format = "dd/MM/yyyy";
+    $.fn.datepicker.defaults.format = "dd/M/yyyy";
     $.fn.datepicker.defaults.autoClose = true;
+    $.fn.datepicker.defaults.titleFormat = "M yyyy"
     var bootstrapDateOfBirth = $('#bootstrapDateOfBirth').datepicker({
         startView: "years",
         maxView: "decades"

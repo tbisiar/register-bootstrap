@@ -1,0 +1,546 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>The University of Auckland</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="timeout" content="600"/>
+    <meta name="password.bounds.min" content="8"/>
+    <meta name="password.bounds.max" content="50"/>
+    <meta name="dob.age.of.consent" content="14">
+    <meta name="dob.too.young" content="5">
+
+    
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-10521001-18']);
+            _gaq.push(['_trackPageview']);
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src =
+                        ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
+                        + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    
+    <!-- Old jQuery -->
+    <!-- <script src="register/js/jquery-1.7.2.min.js" type="text/javascript"></script> -->
+
+    <!--  Migration  -->
+    <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" type="text/javascript"></script> -->
+    <!-- <script src="http://code.jquery.com/jquery-migrate-1.4.1.js" type="text/javascript"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.0.0.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-migrate-3.0.0.js"></script> -->
+
+    <!--  CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="register/css/datepicker-standalone.css">
+
+    <!-- EPR CSS -->
+    <link rel="stylesheet" type="text/css" href="register/css/epr.css">
+
+    <script src="register/js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script src="register/js/bootstrap-datepicker.js"></script>
+    <!--<script src="register/js/datepicker/lib/picker.js"></script>-->
+    <!--<script src="register/js/datepicker/lib/picker.date.js"></script>-->
+    <script src="register/js/forms.js"></script>
+    <script src="register/js/svg4everybody.js"></script>
+</head>
+
+<body>
+
+<header id="header" role="banner" class="main-header">
+    <div class="container" role="presentation">
+        <div class="row" role="presentation">
+            <div class="col-xs-12 col-lg-2">
+                <a href="https://www.auckland.ac.nz" class="logo">
+                    <!-- <svg class="icon icon-logo hidden-md-down" focusable="false" aria-hidden="true">
+                        <use xlink:href="register/images/sprite.svg#logo-big"></use>
+                    </svg>
+                    <svg class="icon icon-logo hidden-lg-up" focusable="false" aria-hidden="true">
+                        <use xlink:href="register/images/sprite.svg#logo-small"></use>
+                    </svg> -->
+                    <span class="sr-only">The University of Auckland, New Zealand - Te Whare W&#257;nanga o T&#257;maki Makaurau</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="main-content" class="main-content general-content">
+    <main id="main">
+        <div class="embed-section">
+            <div class="frontpage-banner">
+                <div class="frontpage-banner__img">
+                    <img alt src="register/images/register-banner.jpg" sizes="100vw" />
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="uoa-section">
+                <div class="container">
+
+
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12 sectionheading">
+                            <h2>Register for an account</h2>
+                        </div>
+                    </div>
+
+<div id="register" class="form-dialog">
+
+    <form action="/register" method="post" name="registerForm" accept-charset="UTF-8" id="registerForm" >
+        <input type="hidden" name="relyingParty" value=""/>
+        <input type="hidden" name="executionKey" value=""/>
+
+        
+            <p style="text-align: center;">Test environment only: <a href="#register" id="autofill"
+                onclick=" // Inline so we don't have it visible in production
+                 $('#email').val('' + (new Date().getTime()) + '@robert.enarc.auckland.ac.nz');
+                 $('#firstName').val('Joe');
+                 $('#lastName').val('Bloggs');
+                 if ($('#password') != null) {
+                     $('#password').val('robert12');
+                     $('#passwordConfirmation').val('robert12');
+                 }
+
+                 var dob = new Date() - (YEAR_IN_MS * 20);
+
+                 var $picker = $('#dateOfBirth').pickadate('picker');
+
+                 $picker.set('select', dob);
+
+                 $('#password').trigger('input');
+
+                 if ($('#acceptTerms').attr('checked') !== 'checked') {
+                     $('#acceptTerms').click(); // UOA styling doesn't show when checking box by prop value
+                 }">fill all values</a>.</p>
+        
+
+        <fieldset class="uoa-form">
+            <!-- Flash messages -->
+            
+
+            <div class="row uoa-form__elt uoa-form__text">
+                <label for="email" class="col-md-3 uoa-form__label">Email address</label>
+                <div class="col-xs-11 col-md-6">
+                    <input type="text" name="email" maxlength="320" class="form-control" required="required" id="email" value="" />
+                </div>
+                <div class="col-xs-1 col-md-3 verified-row"></div>
+                
+            </div>
+
+
+            <div class="row uoa-form__elt uoa-form__text">
+                <label for="firstName" class="col-md-3 uoa-form__label">First name</label>
+                <div class="col-xs-11 col-md-6">
+                    <input type="text" name="firstName" class="form-control nameField" maxlength="100" id="firstName" value="" />
+                </div>
+                <div class="col-xs-1 col-md-3 verified-row">
+                    
+                </div>
+                
+            </div>
+
+            <div class="row uoa-form__elt uoa-form__text">
+                <label for="middleName" class="col-md-3 uoa-form__label">Middle name</label>
+                <div class="col-xs-11 col-md-6">
+                    <input type="text" name="middleName" class="form-control nameField" maxlength="100" id="middleName" value="" />
+                </div>
+                <div class="col-xs-1 col-md-3 verified-row">
+                    
+                </div>
+                
+            </div>
+
+            <div class="row uoa-form__elt uoa-form__text">
+                <label for="lastName" class="col-md-3 uoa-form__label">Last name</label>
+                <div class="col-xs-11 col-md-6">
+                    <input type="text" name="lastName" class="form-control nameField" maxlength="100" required="required" id="lastName" value="" />
+                </div>
+                <div class="col-xs-1 col-md-3 verified-row">
+                    
+                </div>
+                
+            </div>
+
+
+            <div class="row uoa-form__elt uoa-form__radio">
+                <p class="col-xs-12 col-md-6 uoa-form__label">Do you have a preferred name that is different from your full legal name?</p>
+                <div class="col-xs-12 col-md-6">
+                    <div class="uoa-form__radios">
+                        <label for="preferredNameRadioYes">
+                            <input type="radio" name="hasPreferredName" value="true" id="preferredNameRadioYes"  />
+                            Yes
+                        </label>
+                        <label for="preferredNameRadioNo">
+                            <input type="radio" name="hasPreferredName" checked="checked" value="false" id="preferredNameRadioNo"  />
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="preferredNameSection" class="collapse">
+                <div class="row uoa-form__elt uoa-form__text">
+                    <label for="preferredFirstName" class="col-md-3 uoa-form__label">Preferred First name</label>
+                    <div class="col-xs-11 col-md-6">
+                        <input type="text" name="preferredFirstName" class="form-control nameField preferredName" maxlength="100" id="preferredFirstName" value="" />
+                    </div>
+                </div>
+                
+
+                <div class="row uoa-form__elt uoa-form__text">
+                    <label for="preferredMiddleName" class="col-md-3 uoa-form__label">Preferred Middle name</label>
+                    <div class="col-xs-11 col-md-6">
+                        <input type="text" name="preferredMiddleName" class="form-control nameField preferredName" maxlength="100" id="preferredMiddleName" value="" />
+                    </div>
+                </div>
+                
+
+                <div class="row uoa-form__elt uoa-form__text">
+                    <label for="preferredLastName" class="col-md-3 uoa-form__label">Preferred Last name</label>
+                    <div class="col-xs-11 col-md-6">
+                        <input type="text" name="preferredLastName" class="form-control nameField preferredName" maxlength="100" id="preferredLastName" value="" />
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="row uoa-form__elt uoa-form__date" data-pattern-error-msg="This date is invalid" data-max-error-msg="This date can't be in the future">
+                <label for="dateOfBirth" class="col-md-3 uoa-form__label">Date of birth</label>
+                <div class="col-xs-11 col-md-6">
+                    <div class="dob-container">
+                        <!-- <svg class="icon-calendar" focusable="true" aria-hidden="false">
+                            <use xlink:href="register/images/sprite.svg#icn-calendar"></use>
+                        </svg> -->
+                        <input id="dateOfBirth" type="date" aria-required="false" min="1900-01-01" max="today"
+                               aria-describedby="date-error" data-value=""
+                               data-verified="" />
+                       <input id="bootstrapDateOfBirth" />
+                    </div>
+                    <div class="uoa-form__elt-error" id="date-error"></div>
+                    
+                </div>
+                <div class="col-xs-1 col-md-3 verified-row">
+                    
+                </div>
+            </div>
+
+            <div class="row uoa-form__elt uoa-form__text" id="password-form">
+                <label for="password" class="col-md-3 uoa-form__label">Choose a password</label>
+                <div class="col-xs-11 col-md-6 password-visibility">
+                    <input type="password" name="password" class="form-control" required="required" id="password" value="" />
+                    <label for="password" id="password-toggle">
+                        <!-- <svg id="password-visibility-on">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="register/images/icons.svg#ic_visibility"></use>
+                        </svg>
+                        <svg id="password-visibility-off" class="hidden">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="register/images/icons.svg#ic_visibility_off"></use>
+                        </svg> -->
+                    </label>
+                </div>
+                
+            </div>
+
+            <div class="row password-strength-row">
+                <div class="col-md-3"></div> <!-- blank label -->
+                <div class="col-xs-6 col-md-3">
+                    <span class="small" id="password-strength-text"></span>
+                </div>
+                <div class="col-xs-5 col-md-3" id="password-strength-bar">
+                    <span class="password-strength-cube password-strength-1">&nbsp</span>
+                    <span class="password-strength-cube password-strength-2">&nbsp</span>
+                    <span class="password-strength-cube password-strength-3">&nbsp</span>
+                    <span class="password-strength-cube password-strength-4">&nbsp</span>
+                </div>
+            </div>
+
+            <div id="password-requirements" class="row">
+                <div class="col-sm-3"></div> <!-- blank label -->
+                <div class="col-xs-11 col-sm-6">
+                    <div id="password-hints"></div>
+                    <span id="requirement-min" class="password-requirement show-if-false small">
+                        <!-- <svg class="icon" focusable="false" aria-hidden="true">
+                            <use xlink:href="register/images/icons.svg#icn-cross-circle"></use>
+                        </svg> -->
+                        Must be at least 8 characters
+                    </span>
+                    <span id="requirement-max" class="password-requirement show-if-false small">
+                        <!-- <svg class="icon" focusable="false" aria-hidden="true">
+                            <use xlink:href="register/images/icons.svg#icn-cross-circle"></use>
+                        </svg> -->
+                        Can only be a maximum of 50 characters
+                    </span>
+                    <span id="requirement-forwardslash" class="password-requirement show-if-false small">
+                        <!-- <svg class="icon" focusable="false" aria-hidden="true">
+                            <use xlink:href="register/images/icons.svg#icn-cross-circle"></use>
+                        </svg> -->
+                        Can't contain a / at the end
+                    </span>
+                    <span id="requirement-quotes" class="password-requirement show-if-false small">
+                        <!-- <svg class="icon" focusable="false" aria-hidden="true">
+                            <use xlink:href="register/images/icons.svg#icn-cross-circle"></use>
+                        </svg> -->
+                        Can't contain " (double-quotes)
+                    </span>
+                    <span id="requirement-match" class="password-requirement show-if-false small">
+                        <!-- <svg class="icon" focusable="false" aria-hidden="true">
+                            <use xlink:href="register/images/icons.svg#icn-cross-circle"></use>
+                        </svg> -->
+                        Passwords don't match
+                    </span>
+                </div>
+            </div>
+
+            <div class="row uoa-form__elt uoa-form__text" id="passwordConfirmationSection">
+                <label for="passwordConfirmation" class="col-md-3 uoa-form__label">Confirm password</label>
+                <div class="col-xs-11 col-md-6">
+                    <input type="password" name="passwordConfirmation" class="form-control" required="required" id="passwordConfirmation" value="" />
+                </div>
+                
+            </div>
+
+            <div class="row uoa-form__elt uoa-form__checkbox">
+                <div class="col-md-3"></div>
+                <div class="col-xs-11 col-md-6 uoa-form__checkboxes">
+                    <label for="acceptTerms" id="labelAccept">
+                        <input type="hidden" name="_acceptTerms" /><input type="checkbox" name="acceptTerms" required="required" id="acceptTerms"  />
+                        I accept the <a href="http://security.auckland.ac.nz/ICTAcceptableUsePolicy.htm" target="_blank">IT Acceptable Use Policy</a>,
+                    and <a href="http://www.auckland.ac.nz/uoa/disclaimer" target="_blank">disclaimer</a>.
+                    </label>
+                </div>
+                
+            </div>
+
+            <div class="row uoa-form__elt">
+                <div class="col-md-3"></div>
+                <div class="col-md-6" id="submit-errors">
+                </div>
+            </div>
+
+            <div class="row uoa-form__elt">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <button type="submit" class="cta cta--dark-blue-round" name="register" id="registerSubmit">
+                        Register
+                        <!-- <svg class="icon icn-arrow" focusable="false" aria-hidden="true">
+                            <use xlink:href="register/images/sprite.svg#icn-arrow"></use>
+                        </svg> -->
+                    </button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-md-12 sectionheading">
+        <h2>Please note</h2>
+    </div>
+
+    
+
+    <div class="col-xs-12 col-md-12">
+        <p>Please feel free to review <a href="http://www.auckland.ac.nz/privacy">our privacy policy</a>
+        and <a href="http://www.disability.auckland.ac.nz/">disability services</a> we offer.</p>
+    </div>
+</div>
+
+
+
+</div></div></div></main></div>
+
+<!-- MODALS -->
+<div id="ageOfConsent-warning" class="modal collapse">
+    <div class="modal-window">
+        <div class="container">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Date of birth warning</h3>
+                    <a class="modal-close-cross modal-close">
+                        Close
+                        <!-- <svg role="img" aria-label="close">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="register/images/sprite.svg#icn-close"></use>
+                        </svg> -->
+                    </a>
+                </div>
+                <p>The date of birth entered indicates that you are less than 14 years of age. Please update the date of birth if this is incorrect.</p>
+                <button class="modal-continue modal-close cta cta--dark-blue-round" aria-label="Close">
+                    Continue
+                    <!-- <svg class="icon icn-arrow" focusable="false" aria-hidden="true">
+                        <use xlink:href="register/images/sprite.svg#icn-arrow"></use>
+                    </svg> -->
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="tooYoung-warning" class="modal collapse">
+    <div class="modal-window">
+        <div class="container">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Date of birth warning</h3>
+                    <a class="modal-close-cross modal-close">
+                        Close
+                        <!-- <svg role="img" aria-label="close">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="register/images/sprite.svg#icn-close"></use>
+                        </svg> -->
+                    </a>
+                </div>
+                <p>The date of birth entered indicates you are less than 5 years of age. Please update the date of birth if this is incorrect, otherwise you will not be able to proceed.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="nameFormat-warning" class="modal collapse">
+    <div class="modal-window">
+        <div class="container">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Name format warning</h3>
+                    <a class="modal-close-cross modal-close">
+                        Close
+                        <!-- <svg role="img" aria-label="close">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="register/images/sprite.svg#icn-close"></use>
+                        </svg> -->
+                    </a>
+                </div>
+                <p>Please check the format of the name you have entered. Names should not be in all upper or all lower case.</p>
+                <p>Do you want to continue?</p>
+                <button class="modal-close btn btn--dark-blue" aria-label="Close">Cancel</button>
+                <button class="modal-close btn btn--light-blue pull-xs-right" id="nameFormatContinue">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="timeout-warning" class="modal collapse">
+    <div class="modal-window">
+        <div class="container">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Session expired</h3>
+                </div>
+                <p>Your session has expired due to inactivity, please refresh the page.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- /MODALS -->
+
+<footer class="uoa-footer" role="contentinfo">
+    <div class="uoa-footer__container bg-dark-grey">
+        <div class="uoa-footer__social container">
+            <div class="offset-md-3 offset-xl-6 col-md-9 col-xl-6">
+                <div>
+                    <h3 id="Connectwithus"> Connect with us</h3>
+                    <ul class="footer__social-icon-list" aria-labelledby="Connectwithus">
+
+                        <li role="presentation">
+                            <a href="http://www.facebook.com/UniofAkl" title="Facebook">
+                                <!-- <svg role="img" pointer-events="none" aria-label="Facebook">
+                                    <title>Facebook</title>
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="register/images/sprite.svg#icn-facebook"></use>
+                                </svg> -->
+                            </a>
+                        </li>
+
+                        <li role="presentation">
+                            <a href="http://twitter.com/AucklandUni" title="Twitter">
+                                <!-- <svg role="img" pointer-events="none" aria-label="Twitter">
+                                    <title>Twitter</title>
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="register/images/sprite.svg#icn-twitter"></use>
+                                </svg> -->
+                            </a>
+                        </li>
+
+                        <li role="presentation">
+                            <a href="http://www.youtube.com/user/UNIofAUCKLAND" title="YouTube">
+                                <!-- <svg role="img" pointer-events="none" aria-label="YouTube">
+                                    <title>YouTube</title>
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="register/images/sprite.svg#icn-youtube"></use>
+                                </svg> -->
+                            </a>
+                        </li>
+
+                        <li role="presentation">
+                            <a href="https://www.linkedin.com/company/the-university-of-auckland" title="LinkedIn">
+                                <!-- <svg role="img" pointer-events="none" aria-label="LinkedIn">
+                                    <title>LinkedIn</title>
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="register/images/sprite.svg#icn-linkedin"></use>
+                                </svg> -->
+                            </a>
+                        </li>
+
+                        <li role="presentation">
+                            <a href="http://instagram.com/universityofauckland" title="Instagram">
+                                <!-- <svg role="img" pointer-events="none" aria-label="Instagram">
+                                    <title>Instagram</title>
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="register/images/sprite.svg#icn-instagram"></use>
+                                </svg> -->
+                            </a>
+                        </li>
+
+                        <li role="presentation">
+                            <a class="more-link" href="https://www.auckland.ac.nz/en/about/the-university/uoa-contact-us/connect-with-the-university-of-auckland.html" title="University of Auckland More Social..." aria-label="University of Auckland More Social...">
+                                <span>...</span><span>More</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="uoa-footer__container bg-dark-grey">
+        <div class="uoa-footer__legal container">
+            <ul class="sub">
+                <li role="presentation">
+                    <a href="https://www.auckland.ac.nz/en/admin/footer-links/sitemap.html">Site map</a>
+                </li>
+
+                <li role="presentation">
+                    <a href="https://www.auckland.ac.nz/en/admin/footer-links/accessibility.html">Accessibility</a>
+                </li>
+
+                <li role="presentation">
+                    <a href="https://www.auckland.ac.nz/en/admin/footer-links/copyright.html">Copyright</a>
+                </li>
+
+                <li role="presentation">
+                    <a href="https://www.auckland.ac.nz/en/admin/footer-links/privacy.html">Privacy</a>
+                </li>
+
+                <li role="presentation">
+                    <a href="https://www.auckland.ac.nz/en/admin/footer-links/disclaimer.html">Disclaimer</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="register/js/zxcvbn.js"></script>
+<script src="register/js/register.js"></script>
+
+</body>
+</html>
